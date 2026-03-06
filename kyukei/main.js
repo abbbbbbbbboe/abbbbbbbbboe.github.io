@@ -34,7 +34,7 @@
 
     button.addEventListener('click', () => {
         button.disabled = true;
-        randomEmoji(10, 1100);
+        randomEmoji(10, 900);
     });
 
 
