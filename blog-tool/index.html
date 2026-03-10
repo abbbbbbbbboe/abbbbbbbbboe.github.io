@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nisetexture web blog-tool</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
-    <input type="file" id="csvFile" accept=".csv">
-    <button id="copyButton">Copy!</button>
-    <main id="copyTarget"></main>
+    <header class="title">
+        <p>ニセテ通信</p>
+        <h1>object作成ツール</h1>
+    </header>
+
+    <section class="container">
+        <div class="inputFile">
+            <input type="file" id="csvFile" accept=".csv" class="file-button" style="width: 400px;">
+            <button id="copyButton">Copy!</button>
+        </div>
+
+        <div class="contant">
+            <main id="copyTarget"></main>
+        </div>
+    </section>
+
+    <footer>
+        <a href="/">back to top↩︎</a>
+    </footer>
+
     <script src="main.js"></script>
 </body>
+
 </html>
