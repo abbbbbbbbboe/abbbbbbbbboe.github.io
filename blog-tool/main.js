@@ -33,7 +33,7 @@ input.addEventListener('change', function (event) {
 
             skipbutton: ['text', 'id', 'label', 'mobile_label'],
 
-            "img-button": ['targetId', 'label'],
+            "img-button": ['label','targetId'],
 
             p: ["text", "class"],
             h1: ["text", "class"],
