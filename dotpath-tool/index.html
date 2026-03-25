@@ -26,6 +26,7 @@
             </button>
             <div class="explanationText">
                 <h1>説明</h1>
+                <hr>
                 <p>カンバスにはグリッド状にポイントが並んでいます。</p>
                 <p>左クリックした状態のカーソルが通過したポイントを繋げていくことで線を描画します。</p>
                 <p>縦横には綺麗に直線をかけますが、斜線や曲線はジャギったような線になります。</p>
@@ -38,9 +39,7 @@
                 <p>・clear!ボタンは描画したすべての線を削除します。</p>
                 <p>・back!ボタンは一つ前の線を消します。</p>
                 <p>・download!ボタンはsvg形式で描画した線をダウンロードできます。</p>
-
             </div>
-
         </div>
         <div class="contents">
             <!-- <div class="construction">
@@ -49,7 +48,15 @@
             <div class="canvas">
 
             </div>
+            
             <hr class="dotHr">
+            <div class="traceLayer">
+                <p>trace image→&thinsp;</p>
+                <input type="file" id="bgimageLoader" accept="image/*">
+                <button>X</button>
+                <label for="imageOpacity">O :</label><input type="range" id="imageOpacity" value="50">
+
+            </div>
             <div class="inputPanel">
                 <div class="panelInputArea">
                     <div class="board">
@@ -90,6 +97,7 @@
                 
             </div>
 
+
             <hr class="solidHr">
 
             <div class="uiPanel">
@@ -122,8 +130,7 @@
 
     <script src="main.js"></script>
     <script src="explanation.js"></script>
-
-
+    <script src="traceImageLayer.js"></script>
 </body>
 
 </html>

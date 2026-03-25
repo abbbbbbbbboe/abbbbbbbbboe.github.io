@@ -10,6 +10,9 @@ const gridSizeInput = document.querySelector('#gridSizeInput');
 const lineWidthInput = document.querySelector('#lineWidthInput');
 const selectColorInput = document.querySelector("#selectColor");
 
+// let canvasElementWidth = 500;
+// canvasElement.style.width = canvasElementWidth + 'px';
+
 
 dlButtonElment.disabled = true;
 
@@ -39,14 +42,15 @@ const gridWidth = 500;
 const gridHeight = 500;
 
 function createGrid(width, height, gridSize) {
-//ドットをグリット上に並べる。for文で範囲を作って繰り返し行うことで羅列する。
+    gridLayer.innerHTML = "";
+    //ドットをグリット上に並べる。for文で範囲を作って繰り返し行うことで羅列する。
     for (let y = 0; y <= height; y += gridSize) {
         for (let x = 0; x <= width; x += gridSize) {
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle"); //circle要素を作る
             circle.setAttribute("cx", x); //circle要素の属性と値。cx=横向きの位置　x=代入される値
             circle.setAttribute("cy", y); //circle要素の属性と値。cy=縦向きの位置　y=代入される値
             circle.setAttribute("r", 2); //半径の大きさ
-            circle.setAttribute("fill", "#f0f6f7"); //svgの塗りの色
+            circle.setAttribute("fill", "#fbfbfb"); //svgの塗りの色
             gridLayer.appendChild(circle);
         }
     }
@@ -64,22 +68,22 @@ UIokButtonElement.addEventListener("click", () => {
     let lineWidthInputValue = parseInt(lineWidthInput.value);
 
 
-    if (!panelWidthValue || isNaN(panelWidthValue)){
+    if (!panelWidthValue || isNaN(panelWidthValue)) {
         panelWidthValue = 500;
-    } else if(panelWidthValue >= 700) {
+    } else if (panelWidthValue >= 700) {
         panelWidthValue = 700;
         panelWidth.value = "700";
-    } 
+    }
 
-     if (!panelHeightValue || isNaN(panelHeightValue)){
+    if (!panelHeightValue || isNaN(panelHeightValue)) {
         panelHeightValue = 500;
-    } else if(panelHeightValue >= 500) {
+    } else if (panelHeightValue >= 500) {
         panelHeightValue = 500;
         // panelHeight.setAttribute("value", "500");
         panelHeight.value = "500";
-    } 
+    }
 
-    if (!gridSizeInputvalue || isNaN(gridSizeInputvalue)){
+    if (!gridSizeInputvalue || isNaN(gridSizeInputvalue)) {
         gridSizeInputvalue = 4;
     }
 
@@ -97,13 +101,20 @@ UIokButtonElement.addEventListener("click", () => {
 
     gridLayer.innerHTML = "";
     createGrid(panelWidthValue, panelHeightValue, gridSizeInputvalue);
-    
+
+    const traceImageLayer = document.querySelector('.traceImageLayer');
+
+    if (traceImageLayer) {
+        traceImageLayer.style.width = panelWidthValue + 'px';
+        traceImageLayer.style.height = panelHeightValue + 'px';
+    }
+
 });
 
 if (selectColorInput) {
     selectColorInput.addEventListener("input", () => {
-    selectColorValue = selectColorInput.value;
-});
+        selectColorValue = selectColorInput.value;
+    });
 }
 
 UIresetButtonElement.addEventListener("click", () => {
@@ -120,7 +131,8 @@ UIresetButtonElement.addEventListener("click", () => {
     svg.setAttribute("viewBox", "0 0 500 500");
 
     lineWidthValue = "2";
-   
+
+
     createGrid(gridWidth, gridHeight, gridSize);
 })
 
@@ -164,6 +176,8 @@ function startDrawing() {
     currentPolyline.setAttribute("fill", "none");
     currentPolyline.setAttribute("stroke", selectColorValue);
     currentPolyline.setAttribute("stroke-width", lineWidthValue);
+
+    currentPolyline.style.pointerEvents = "none";
     pathLayer.appendChild(currentPolyline);
 
     dlButtonElment.disabled = false;
@@ -313,3 +327,4 @@ function downloadSVG() {
     //一時URLを削除
     URL.revokeObjectURL(url);
 }
+
