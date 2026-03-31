@@ -57,7 +57,7 @@
 
  #explanationActive {
 
-     height: 440px;
+     height: 500px;
     z-index: 10;
      border: 1px solid gray;
      border-radius: 16px 16px 16px 16px;
@@ -94,12 +94,20 @@
  }
 
  .explanationText h1 {
-     font-size: 20px;
-     font-weight: 100;
-     transform: scale(1, .9);
-     line-height: 32px;
-     letter-spacing: 7px;
-     
+    font-size: 20px;
+    font-weight: 100;
+    transform: scale(1, .9);
+    line-height: 32px;
+    letter-spacing: 7px;
+ }
+ .explanationText small {
+    font-size: 10px;
+    font-weight: 100;
+    transform: scale(1, .9);
+    line-height: 10px;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 15px;
  }
 
  .explanationText p,
@@ -110,14 +118,15 @@
  #explanationTextActive p {
      display: block;
      margin-bottom: 3px;
-     font-size: 16px;
+     font-size: 12px;
+     line-height: 25px;
      letter-spacing: 2px;
  }
 
  #explanationTextActive hr {
     display: block;
     border:none;
-    border-top: 2px dashed gray;
+    border-top: 1px dashed gray;
     margin:0 -25px 10px -5px;
     
  }
@@ -206,13 +215,18 @@
 .traceLayer label {
     width: 17px;
 }
+.traceLayer button {
+    width: 17px;
+    margin-right: 10px;
+}
+
 #bgimageLoader{
-    width: 195px;
+    width: 180px;
     border-radius: 0;
 }
 #imageOpacity {
     margin-left: 10px;
-    width: 153px;
+    width: 143px;
     
     appearance: none;
     height: 5px;
@@ -243,13 +257,15 @@
  }
 
  .dotHr {
-     border-top: 5px dotted white;
-     margin: 20px -20px 15px -20px;
+    border: none;
+    border-top: 5px dotted white;
+    margin: 20px -20px 15px -20px;
  }
 
  .solidHr {
-     border-top: 2px solid white;
-     margin-bottom: 8px;
+    border: none;
+    border-top: 2px solid white;
+    margin-bottom: 8px;
  }
 
  /* button:not(.inputButton, .resetButton, .explanationOpen) */

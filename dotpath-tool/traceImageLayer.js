@@ -21,6 +21,7 @@ bgInput.addEventListener('change', (e) => {
         console.log(h);
         traceImageLayer.style.width = w + "px";
         traceImageLayer.style.height = h + "px";
+        traceImageLayer.style.opacity = 0.5;
         
         canvasElement.appendChild(traceImageLayer);
     }
@@ -33,14 +34,24 @@ bgInput.addEventListener('change', (e) => {
 
     reader.onload = (event) => {
         traceImageLayer.style.backgroundImage = `url(${event.target.result})`;
-        traceImageLayer.style.opacity = 0.5;
+        // traceImageLayer.style.opacity = 0.5;
     }
     reader.readAsDataURL(bgimageFile);
 
 
 })
 
-// const traceImageDeleatButton = document.querySelector();
+const traceImageDeleatButton = document.querySelector('.traceImageDeleatButton');
+traceImageDeleatButton.addEventListener('click', () => {
+    const traceImageLayer = document.querySelector('.traceImageLayer');
+    if (traceImageLayer) {
+        traceImageLayer.remove();
+        document.getElementById('bgimageLoader').value ='';
+        
+    }
+    
+})
+
 
 const traceImageOpacity = document.querySelector('#imageOpacity')
 if (traceImageOpacity) {

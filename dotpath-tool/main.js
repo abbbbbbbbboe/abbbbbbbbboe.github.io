@@ -50,7 +50,7 @@ function createGrid(width, height, gridSize) {
             circle.setAttribute("cx", x); //circle要素の属性と値。cx=横向きの位置　x=代入される値
             circle.setAttribute("cy", y); //circle要素の属性と値。cy=縦向きの位置　y=代入される値
             circle.setAttribute("r", 2); //半径の大きさ
-            circle.setAttribute("fill", "#fbfbfb"); //svgの塗りの色
+            circle.setAttribute("fill", "#fbfbfbd3"); //svgの塗りの色
             gridLayer.appendChild(circle);
         }
     }

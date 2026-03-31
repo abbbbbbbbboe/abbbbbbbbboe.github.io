@@ -2,6 +2,7 @@ const exOpen = document.querySelector(".explanationOpen");
 const exOpenP = document.querySelector(".explanationOpen p");
 
 const exText = document.querySelector(".explanationText");
+const exClass = document.querySelector(".explanationClass");
 
 const explanationElement = document.querySelector('#explanation');
 
@@ -15,7 +16,12 @@ exOpen.addEventListener('click', () => {
         exText.id = "";
         exOpenP.innerHTML = "↓";
         explanationElement.id = "explanation";
-
     }
-    
+})
+document.addEventListener('click', (e) => {
+    if (!exClass.contains(e.target)){
+        exText.id = "";
+        exOpenP.innerHTML = "↓";
+        explanationElement.id = "explanation";
+    }
 })

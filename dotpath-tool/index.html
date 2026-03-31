@@ -25,14 +25,15 @@
                 <p>↓</p>
             </button>
             <div class="explanationText">
-                <h1>説明</h1>
+                <h1>説明<small>(20260331)</small></h1>
                 <hr>
                 <p>カンバスにはグリッド状にポイントが並んでいます。</p>
                 <p>左クリックした状態のカーソルが通過したポイントを繋げていくことで線を描画します。</p>
                 <p>縦横には綺麗に直線をかけますが、斜線や曲線はジャギったような線になります。</p>
                 <br>
-                <p>【使い方】</p>
+                <p><b>【使い方】</b></p>
                 <p>・カンバスの上をマウスを左クリックした状態で移動させてください。</p>
+                <p>・画像をトレースすることもできます。trace imageのファイルを選択からトレースしたい画像をinputしてください。横のスライダーから透明度を調整できます。</p>
                 <p>・点線の下の入力部分からboardとstrokeの設定変更ができます。</p>
                 <p>・boardはカンバスの横幅（W, max=700）、縦幅（H, max=500）、グリッドのサイズ（grid size）が指定できます。grid sizeは数値が大きいほどポイントの間隔が広がりパスの少ない荒い線になります。反対に数値を小さくするとパスの数が増えますが、よりジャギったような線になります。</p>
                 <p>・strokeは線の太さ（W）と線の色（C）が指定できます。</p>
@@ -53,7 +54,7 @@
             <div class="traceLayer">
                 <p>trace image→&thinsp;</p>
                 <input type="file" id="bgimageLoader" accept="image/*">
-                <button>X</button>
+                <button class="traceImageDeleatButton">×</button>
                 <label for="imageOpacity">O :</label><input type="range" id="imageOpacity" value="50">
 
             </div>
